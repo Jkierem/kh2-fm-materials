@@ -5,6 +5,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { triggerMaterial } from './redux/materials';
 import { loadState } from './redux/io';
 import { compose } from 'redux';
+import "./App.css"
 
 const useMaterials = () => useSelector(prop("materials"))
 
@@ -17,7 +18,7 @@ const MaterialList = () => {
 
   const getMaterial = name => propOr(false,name,materials);
   
-  return map(([name,group]) => {
+  const sets = map(([name,group]) => {
     return <fieldset key={name}>
       <legend>{name}</legend>
       {
@@ -39,6 +40,9 @@ const MaterialList = () => {
       }
     </fieldset>
   })(toPairs(getMaterials()))
+  return <div className="container">
+    {sets}
+  </div>
 }
 
 const Missing = () => {
