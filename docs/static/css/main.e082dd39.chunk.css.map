@@ -1,0 +1,1 @@
+{"version":3,"sources":["App.css"],"names":[],"mappings":"AAAA,WACI,YAAa,CACb,kBAAmB,CACnB,cACJ,CAEA,oBACI,aACJ","file":"main.e082dd39.chunk.css","sourcesContent":[".container {\r\n    display: flex;\r\n    flex-direction: row;\r\n    flex-wrap: wrap;\r\n}\r\n\r\n.container > fieldset {\r\n    display: block;\r\n}"]}
