@@ -13,7 +13,7 @@
     "react-scripts": "3.4.1",
     "redux": "^4.0.5",
     "redux-observable": "^1.2.0",
-    "redux-utility": "^1.0.3",
+    "redux-utility": "2.2.0",
     "rxjs": "^6.5.5"
   },
   "scripts": {

@@ -1,8 +1,5 @@
-import { Actions, Reducers } from 'redux-utility'
+import { nullaryActionCreator, unaryActionCreator, createReducer } from 'redux-utility'
 import { evolve, not, when, propSatisfies, isNil, assoc, propOr, compose } from 'ramda';
-
-const { unaryActionCreator } = Actions;
-const { createReducer } = Reducers
 
 const triggerProp = (name,obj) => compose(
     evolve({ [name]: not }),
@@ -14,6 +11,7 @@ const triggerProp = (name,obj) => compose(
 
 export const TRIGGER_MATERIAL="kh/trigger-material";
 export const LOAD_MATERIALS = "kh/load-materials";
+export const RESET_MATERIALS = "kh/reset-materials";
 
 const reducer = createReducer({
     [TRIGGER_MATERIAL]: (state,action) => {
@@ -22,10 +20,12 @@ const reducer = createReducer({
     },
     [LOAD_MATERIALS]: (state,action) => {
         return propOr({},"payload",action);
-    }
+    },
+    [RESET_MATERIALS]: () => ({})
 })
 
 export default reducer
 
 export const triggerMaterial = unaryActionCreator(TRIGGER_MATERIAL);
 export const loadMaterials = unaryActionCreator(LOAD_MATERIALS);
+export const resetMaterials = nullaryActionCreator(RESET_MATERIALS);

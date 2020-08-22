@@ -1,5 +1,4 @@
-import { Actions } from 'redux-utility'
-const { nullaryActionCreator } = Actions;
+import { nullaryActionCreator } from 'redux-utility'
 
 export const SAVED_STATE = "kh/saved-state";
 export const LOAD_STATE = "kh/load-state";

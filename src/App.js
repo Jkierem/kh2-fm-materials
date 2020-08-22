@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { map, filter, toPairs, prop, propOr, flatten } from 'ramda'
 import { getMaterials } from './materials';
 import { useSelector, useDispatch } from 'react-redux';
-import { triggerMaterial } from './redux/materials';
+import { triggerMaterial, resetMaterials } from './redux/materials';
 import { loadState } from './redux/io';
 import { compose } from 'redux';
 import "./App.css"
@@ -48,7 +48,7 @@ const MaterialList = () => {
 const Missing = () => {
   const materials = useMaterials();
   const items = compose(
-    map(material => <li>{material}</li>),
+    map((material) => <li key={material}>{material}</li>),
     map(prop(0)),
     filter(([name,flag]) => !flag),
     map(material => [material, propOr(false,material,materials)]),
@@ -59,7 +59,7 @@ const Missing = () => {
     toPairs
   )(getMaterials());
   return <div>
-    <h1>Missing Shit</h1>
+    <h1>Missing Materials</h1>
     <ul>
       {items}
     </ul>
@@ -67,6 +67,8 @@ const Missing = () => {
 }
 
 function App() {
+  const dispatch = useDispatch()
+  const handleReset = compose( dispatch, resetMaterials );
   return (
     <div>
       <h1>Kingdom Hearts 2 Final Mix Materials</h1>
@@ -74,6 +76,9 @@ function App() {
         For info on how to find materials go to <a href="https://kingdomhearts.fandom.com/wiki/List_of_Synthesis_Materials">KH2 Wiki</a>
       </div>
       <MaterialList />
+      <div style={{ margin: "16px"}}>
+        <button onClick={handleReset}>Reset Progress</button>
+      </div>
       <Missing />
     </div>
   );

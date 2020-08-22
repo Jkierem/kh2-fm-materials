@@ -8647,10 +8647,10 @@ redux-observable@^1.2.0:
   resolved "https://registry.yarnpkg.com/redux-observable/-/redux-observable-1.2.0.tgz#ff51b6c6be2598e9b5e89fc36639186bb0e669c7"
   integrity sha512-yeR90RP2WzZzCxxnQPlh2uFzyfFLsfXu8ROh53jGDPXVqj71uNDMmvi/YKQkd9ofiVoO4OYb1snbowO49tCEMg==
 
-redux-utility@^1.0.3:
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/redux-utility/-/redux-utility-1.0.3.tgz#77d6a7a2c31f85a57679f5fd0eb05c31296e17f3"
-  integrity sha512-uAkguKoy53cvgD8Rlc5j02s3xy8tZAqTstjVgXWXVaG5zLsTFk3AZKZKm86p1HSXWH0RKRpLdo6tRxMB2uCnKw==
+redux-utility@2.2.0:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/redux-utility/-/redux-utility-2.2.0.tgz#2497c2bcff6963467e2b5e0437956cbdafce40b6"
+  integrity sha512-1YLo+qGZbN03t8mmgE8vhMKp849aGaMxxfe/pvgq0wlu2eEtrInlxvFcPEyO4bdjj8aK3/8JoO1TBSwPYUzHtw==
   dependencies:
     ramda "^0.27.0"
     react "^16.13.0"
